@@ -1,15 +1,41 @@
-📘 Forward–Momentum Scaling Law (AAAI 2026)
+# 📘 Forward–Momentum Scaling Law (AAAI 2026)
 
-This repository provides a minimal and self-contained implementation of the Forward–Momentum Scaling Law proposed in:
+This repository provides a minimal, self-contained reference implementation of the **Forward–Momentum Scaling Law** proposed in:
 
-"Scaling and Transferability of Annealing Strategies in Large Language Model Training"
-AAAI 2026 (Main Track, Poster)
+**Scaling and Transferability of Annealing Strategies in Large Language Model Training**  
+*AAAI 2026 (Main Track, Poster)*  
+Siqi Wang, Zhengyu Chen, Teng Xiao, Zheqi Lv, Jinluan Yang, Xunliang Cai, Xiaomeng Li, Jingang Wang
 
-🔍 Overview
+---
 
-This repo contains the reference implementation for:
+## 🔍 Overview
 
-Forward effect 
-Annealing momentum
-Forward–Momentum scaling law fitting
-Robust Huber-loss optimization (L-BFGS-B)
+This repository implements the key components introduced in our paper, including:
+
+### ✔ **Forward Effect**
+Computation of the cumulative *forward learning-rate effect*, characterized by the integral  
+\[
+S_1 = \int \eta(t) \, dt.
+\]
+
+### ✔ **Annealing Momentum**
+A practical proxy for the *kinetic effect* of learning-rate decay, defined via a momentum-style update:
+\[
+S_2 = \sum_t \frac{m_t}{\sqrt{v_t}+\epsilon},
+\]
+capturing both the **rate** and **magnitude** of decay during annealing.
+
+### ✔ **Forward–Momentum Scaling Law**
+A unified scaling formulation:
+\[
+L = L_0 + \frac{\lambda_S}{S^{\alpha_S}} + \frac{\lambda_N}{N^{\alpha_N}} + \lambda_M \cdot M
+\]
+used to predict optimal annealing strategies across model scales.
+
+### ✔ **Robust Curve Fitting**
+Robust Huber-loss optimization with L-BFGS-B for stable estimation of scaling parameters.
+
+---
+
+## 📂 Repository Contents
+

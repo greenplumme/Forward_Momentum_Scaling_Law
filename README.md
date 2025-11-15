@@ -4,7 +4,7 @@ This repository provides a minimal, self-contained reference implementation of t
 
 **Scaling and Transferability of Annealing Strategies in Large Language Model Training**  
 *AAAI 2026 (Main Track, Poster)*  
-Siqi Wang, Zhengyu Chen, Teng Xiao, Zheqi Lv, Jinluan Yang, Xunliang Cai, Xiaomeng Li, Jingang Wang
+Siqi Wang, Zhengyu Chen, Teng Xiao, Zheqi Lv, Jinluan Yang, Xunliang Cai, Jingang Wang, Xiaomeng Li
 
 ---
 
@@ -23,13 +23,11 @@ A practical proxy for the *kinetic effect* of learning-rate decay, defined via a
 $$ S_2 = \sum_t \frac{m_t}{\sqrt{v_t}+\epsilon}$$
 capturing both the **rate** and **magnitude** of decay during annealing.
 
-### ✔ **Forward–Momentum Scaling Law**
-A unified scaling formulation:
-$$
-L = L_0 + \frac{\lambda_S}{S^{\alpha_S}} + \frac{\lambda_N}{N^{\alpha_N}} + \lambda_M \cdot M
-$$
-
-
+### ✔ **Forward Effect**
+Computation of the cumulative *forward learning-rate effect*, characterized by the integral\
+```math
+S_1 = \int \eta(t)\, dt
+```
 used to predict optimal annealing strategies across model scales.
 
 ### ✔ **Robust Curve Fitting**

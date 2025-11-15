@@ -13,14 +13,15 @@ Siqi Wang, Zhengyu Chen, Teng Xiao, Zheqi Lv, Jinluan Yang, Xunliang Cai, Xiaome
 This repository implements the key components introduced in our paper, including:
 
 ### ✔ **Forward Effect**
-Computation of the cumulative *forward learning-rate effect*, characterized by the integral  
+Computation of the cumulative *forward learning-rate effect*, characterized by the integral \ 
 $$
 S_1 = \int \eta(t) \, dt.
 $$
 
 ### ✔ **Annealing Momentum**
-A practical proxy for the *kinetic effect* of learning-rate decay, defined via a momentum-style update:
-$ S_2 = \sum_t \frac{m_t}{\sqrt{v_t}+\epsilon}$ capturing both the **rate** and **magnitude** of decay during annealing.
+A practical proxy for the *kinetic effect* of learning-rate decay, defined via a momentum-style update: \
+$$ S_2 = \sum_t \frac{m_t}{\sqrt{v_t}+\epsilon}$$
+capturing both the **rate** and **magnitude** of decay during annealing.
 
 ### ✔ **Forward–Momentum Scaling Law**
 A unified scaling formulation:

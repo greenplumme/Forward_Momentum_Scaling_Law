@@ -15,7 +15,7 @@ This repository implements the key components introduced in our paper, including
 ### ✔ **Forward Effect**
 Computation of the cumulative *forward learning-rate effect*, characterized by the integral
 ```math
-S_1 = \int \eta(t) \, dt
+S = \int \eta(t) \, dt
 ```
 
 

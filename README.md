@@ -49,15 +49,15 @@ This code is intentionally minimal. It provides only the components required to 
 ## ▶️ Usage
 
 ```python
-from annealing_scaling_law import compute_S1, compute_S2, fit_and_evaluate_lr_mom
+from annealing_scaling_law import compute_S, compute_M, fit_and_evaluate_lr_mom
 
-S1 = compute_S1(steps, learning_rates)
-S2 = compute_S2(steps, learning_rates)
+S = compute_S(steps, learning_rates)
+M = compute_M(steps, learning_rates)
 
 y_fit, r2, mse, params = fit_and_evaluate_lr_mom(
     y=loss_values,
-    x=S1,
-    t=S2,
+    x=S,
+    t=M,
     n=model_size,
     initial_params=[...]
 )
